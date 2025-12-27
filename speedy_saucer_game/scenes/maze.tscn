@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://27cm6rn3hdu3"]
+
+[ext_resource type="Texture2D" uid="uid://bojup6udnj8pa" path="res://speedy_saucer_game/assets/darkPurple.png" id="1_khf84"]
+
+[node name="Maze" type="Area2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(37, 46, 30, 213, 190, 385, 355, 384, 504, 549, 704, 589, 979, 612, 1264, 549, 1450, 388, 1594, 191, 1582, 2, 1490, -162, 1121, -187, 1125, -77, 1354, 62, 1474, 78, 1376, 268, 1209, 416, 930, 476, 623, 425, 497, 301, 318, 283, 251, 163, 304, 11, 529, -214, -187, -158, -226, 63)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture_repeat = 2
+color = Color(1, 0, 1, 1)
+texture = ExtResource("1_khf84")
+polygon = PackedVector2Array(37, 46, 30, 213, 190, 385, 355, 384, 504, 549, 704, 589, 979, 612, 1264, 549, 1450, 388, 1594, 191, 1582, 2, 1490, -162, 1121, -187, 1125, -77, 1354, 62, 1474, 78, 1376, 268, 1209, 416, 930, 476, 623, 425, 497, 301, 318, 283, 251, 163, 304, 11, 529, -214, -187, -158, -226, 63)

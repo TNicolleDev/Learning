@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://cewhpvjwcxxb4"]
+
+[ext_resource type="Script" uid="uid://sqewevvybhbm" path="res://speedy_saucer_game/scripts/level.gd" id="1_e4r1c"]
+[ext_resource type="Texture2D" uid="uid://bmt6jh8dla44c" path="res://speedy_saucer_game/assets/purple.png" id="1_kvana"]
+[ext_resource type="PackedScene" uid="uid://jnc5l5v88b2j" path="res://speedy_saucer_game/scenes/player.tscn" id="2_trtuh"]
+[ext_resource type="PackedScene" uid="uid://27cm6rn3hdu3" path="res://speedy_saucer_game/scenes/maze.tscn" id="4_oribh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oribh"]
+font_size = 32
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_e4r1c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+z_index = -110
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kvana")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_trtuh")]
+z_index = 1
+position = Vector2(66, -97)
+
+[node name="Maze" parent="." instance=ExtResource("4_oribh")]
+z_index = -10
+
+[node name="StartLabel" type="Label" parent="."]
+offset_left = 40.0
+offset_top = -167.0
+offset_right = 91.0
+offset_bottom = -144.0
+text = "Start"
+label_settings = SubResource("LabelSettings_oribh")
+
+[node name="EndLabel" type="Label" parent="."]
+offset_left = 1187.0
+offset_top = -138.0
+offset_right = 1262.0
+offset_bottom = -93.0
+text = "End"
+label_settings = SubResource("LabelSettings_oribh")
+
+[node name="TutorialLabel" type="Label" parent="."]
+offset_left = 330.0
+offset_top = 32.0
+offset_right = 459.0
+offset_bottom = 55.0
+scale = Vector2(1.41993, 1.32242)
+text = "WASD To Move"
+
+[node name="TutorialLabel2" type="Label" parent="."]
+offset_left = 173.0
+offset_top = 415.0
+offset_right = 302.0
+offset_bottom = 438.0
+scale = Vector2(1.41993, 1.32242)
+text = "Don't exit the 
+slip stream!"
+
+[connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
