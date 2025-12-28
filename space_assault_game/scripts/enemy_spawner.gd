@@ -1,0 +1,15 @@
+extends Node2D
+var enemy_scene = preload("res://space_assault_game/scenes/easy_enemy.tscn")
+
+@onready var spawn_positions = $SpawnPositions
+
+func _on_timer_timeout() -> void:
+	spawn_enemy()
+
+func spawn_enemy():
+	var spawn_positions_array = spawn_positions.get_children()
+	var random_spawn_postion = spawn_positions_array.pick_random()
+	
+	var enemy_instance = enemy_scene.instantiate()
+	random_spawn_postion.add_child(enemy_instance)
+	#enemy_instance.global_position = Vector2(1350,300)

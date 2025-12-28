@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfdtunbk6vjk1"]
+
+[ext_resource type="Script" uid="uid://d4e062geyexvs" path="res://space_assault_game/scripts/game.gd" id="1_7u4ql"]
+[ext_resource type="Texture2D" uid="uid://b8ukcb7pg787d" path="res://space_assault_game/assets/textures/bg.png" id="1_lluu0"]
+[ext_resource type="PackedScene" uid="uid://def00w4x32te7" path="res://space_assault_game/scenes/sa_player.tscn" id="2_lluu0"]
+[ext_resource type="PackedScene" uid="uid://bowq5aurfrd6t" path="res://space_assault_game/scenes/rocket.tscn" id="3_6ra1c"]
+[ext_resource type="PackedScene" uid="uid://lcyft7jn02lv" path="res://space_assault_game/scenes/easy_enemy.tscn" id="4_yh80y"]
+[ext_resource type="PackedScene" uid="uid://cg1eix8wc8yvb" path="res://space_assault_game/scenes/enemy_spawner.tscn" id="5_15m5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxkh0"]
+size = Vector2(131, 727)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_7u4ql")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_lluu0")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_lluu0")]
+position = Vector2(103, 234)
+
+[node name="Rocket" parent="." instance=ExtResource("3_6ra1c")]
+position = Vector2(225, 240)
+
+[node name="EasyEnemy" parent="." instance=ExtResource("4_yh80y")]
+position = Vector2(1108, 235)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("5_15m5k")]
+
+[node name="DeathlierZone" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathlierZone"]
+position = Vector2(-123.5, 353.5)
+shape = SubResource("RectangleShape2D_jxkh0")
+
+[connection signal="area_entered" from="DeathlierZone" to="." method="_on_deathlier_zone_area_entered"]

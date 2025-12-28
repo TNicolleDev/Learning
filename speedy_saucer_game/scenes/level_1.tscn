@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://sqewevvybhbm" path="res://speedy_saucer_game/scripts/level.gd" id="1_e4r1c"]
 [ext_resource type="Texture2D" uid="uid://bmt6jh8dla44c" path="res://speedy_saucer_game/assets/purple.png" id="1_kvana"]
-[ext_resource type="PackedScene" uid="uid://jnc5l5v88b2j" path="res://speedy_saucer_game/scenes/player.tscn" id="2_trtuh"]
+[ext_resource type="PackedScene" uid="uid://jnc5l5v88b2j" path="res://speedy_saucer_game/scenes/ss_player.tscn" id="2_trtuh"]
 [ext_resource type="PackedScene" uid="uid://27cm6rn3hdu3" path="res://speedy_saucer_game/scenes/maze.tscn" id="4_oribh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oribh"]
