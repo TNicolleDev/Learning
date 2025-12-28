@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://qpq0qde4mpr6"]
+
+[ext_resource type="Script" uid="uid://jjpsfb5t5w01" path="res://space_assault_game/scripts/gameover_screen.gd" id="1_5v78n"]
+[ext_resource type="LabelSettings" uid="uid://doegi8tgq4dm1" path="res://space_assault_game/label_settings/hud.tres" id="2_3usfg"]
+[ext_resource type="FontFile" uid="uid://46lbqnx8ak8t" path="res://space_assault_game/assets/font/Kenney Blocks.ttf" id="3_c53ix"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ft2oh"]
+bg_color = Color(0.23, 1, 0.23, 0.223529)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="GameoverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5v78n")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.0
+offset_top = -193.0
+offset_right = 305.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ft2oh")
+
+[node name="GOLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -129.0
+offset_right = 159.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER
+The teamsters win
+
+"
+label_settings = ExtResource("2_3usfg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SCORE: 9999"
+label_settings = ExtResource("2_3usfg")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = 63.0
+offset_right = 121.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_c53ix")
+theme_override_font_sizes/font_size = 46
+text = "RETRY"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

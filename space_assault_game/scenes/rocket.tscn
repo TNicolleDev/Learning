@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ybawweus4eig" path="res://space_assault_game/assets/textures/rocket.png" id="1_oerqc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_leb2k"]
-radius = 22.09
-height = 93.32
+radius = 8.0
+height = 48.0
 
 [node name="Rocket" type="Area2D"]
 collision_layer = 4
@@ -13,10 +13,11 @@ collision_mask = 2
 script = ExtResource("1_leb2k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.343)
 texture = ExtResource("1_oerqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(14, -1)
+position = Vector2(5, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_leb2k")
 

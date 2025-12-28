@@ -1,7 +1,13 @@
 extends CharacterBody2D
 
+signal took_damage
+@onready var rocket_fire_sound: AudioStreamPlayer = $RocketFireSound
+
+
 var player_speed: float = 300
 var rocket_scene = preload("res://space_assault_game/scenes/rocket.tscn")
+var player_hp: int = 3
+
 #@onready var rocket_container:Node = get_node("RocketContainer")
 # same as above
 @onready var rocket_container:Node = $RocketContainer
@@ -56,7 +62,14 @@ func shoot():
 	# print("shoot")
 	# moved to a global variable.
 	# var rocket_scene = preload("res://space_assault_game/scenes/rocket.tscn")
+	rocket_fire_sound.play()
 	var rocket_instance = rocket_scene.instantiate()
 	rocket_container.add_child(rocket_instance)
 	rocket_instance.global_position = global_position
 	rocket_instance.global_position.x += 80
+
+func take_damage():
+	emit_signal("took_damage")
+
+func die():
+	queue_free()

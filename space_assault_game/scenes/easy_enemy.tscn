@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://lcyft7jn02lv"]
 
 [ext_resource type="Script" uid="uid://caux8cndjrgr2" path="res://space_assault_game/scripts/easy_enemy.gd" id="1_5ovfs"]
-[ext_resource type="Texture2D" uid="uid://hpl7g6tqdbe8" path="res://space_assault_game/assets/textures/enemy_ship.png" id="1_g27kc"]
+[ext_resource type="Texture2D" uid="uid://bv1ca4hh6pryy" path="res://space_assault_game/assets/textures/enemy_ship_2.png" id="2_5ovfs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ovfs"]
 radius = 28.0179
@@ -13,9 +13,11 @@ script = ExtResource("1_5ovfs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -1.5708
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_g27kc")
+scale = Vector2(0.381679, 0.380435)
+texture = ExtResource("2_5ovfs")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5ovfs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
