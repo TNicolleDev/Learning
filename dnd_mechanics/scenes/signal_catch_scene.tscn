@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc4iw3olbntxk"]
+
+[ext_resource type="Script" uid="uid://bo0fr0qgkolld" path="res://dnd_mechanics/scripts/signal_catch_scene.gd" id="1_quohv"]
+
+[node name="SignalCatchScene" type="Node2D"]
+script = ExtResource("1_quohv")
+
+[node name="AnotherSignalCatcher" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "AnotherSignalCatcher"

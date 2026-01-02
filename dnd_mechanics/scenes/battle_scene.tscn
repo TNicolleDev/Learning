@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu33kkxmogiml"]
+
+[ext_resource type="Script" uid="uid://3tedjknu0dd8" path="res://dnd_mechanics/scripts/battle_scene.gd" id="1_6v8a1"]
+[ext_resource type="PackedScene" uid="uid://bwplpqtqpu24k" path="res://dnd_mechanics/scenes/dice_roller.tscn" id="2_qqv8e"]
+[ext_resource type="PackedScene" uid="uid://bbgksap4e7pku" path="res://dnd_mechanics/scenes/the_dice.tscn" id="3_r48dq"]
+[ext_resource type="PackedScene" uid="uid://bc4iw3olbntxk" path="res://dnd_mechanics/scenes/signal_catch_scene.tscn" id="4_jh6u0"]
+
+[node name="BattleScene" type="Node2D"]
+script = ExtResource("1_6v8a1")
+
+[node name="DiceRoller" parent="." instance=ExtResource("2_qqv8e")]
+
+[node name="TheDice" parent="." instance=ExtResource("3_r48dq")]
+position = Vector2(233, 103)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SignalCatcherLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Signal Catcher"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SignalCatchScene" parent="." instance=ExtResource("4_jh6u0")]
+position = Vector2(308, 0)
+
+[connection signal="dice_has_rolled" from="DiceRoller" to="." method="_on_dice_roller_dice_has_rolled"]

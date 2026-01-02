@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://brsdgjvcs3052"]
+[gd_scene load_steps=13 format=4 uid="uid://brsdgjvcs3052"]
 
 [ext_resource type="Script" uid="uid://ts7o3i13teqc" path="res://martian_mike_game/scripts/level_01.gd" id="1_q2oxr"]
 [ext_resource type="PackedScene" uid="uid://c3p1qek7e5vl" path="res://martian_mike_game/scenes/parallax_background.tscn" id="2_0afmg"]
 [ext_resource type="PackedScene" uid="uid://wff142rq0dty" path="res://martian_mike_game/scenes/mm_player.tscn" id="2_q2oxr"]
+[ext_resource type="Texture2D" uid="uid://qkitl0l86s8y" path="res://martian_mike_game/assets/textures/bg/Green.png" id="3_b3byx"]
 [ext_resource type="PackedScene" uid="uid://ccik41r2psn32" path="res://martian_mike_game/scenes/jump_pad.tscn" id="4_654ul"]
 [ext_resource type="PackedScene" uid="uid://bbiwmdth3fdg5" path="res://martian_mike_game/scenes/saw.tscn" id="5_rrhb4"]
 [ext_resource type="PackedScene" uid="uid://ch3h5oqvsn0qf" path="res://martian_mike_game/scenes/spikeball.tscn" id="6_7ny5r"]
@@ -12,18 +13,19 @@
 [ext_resource type="PackedScene" uid="uid://cewhpvjwcxxb4" path="res://speedy_saucer_game/scenes/level_1.tscn" id="10_dkkco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbj8b"]
-size = Vector2(907, 20)
+size = Vector2(1548, 14)
 
 [node name="Level_01" type="Node2D"]
 script = ExtResource("1_q2oxr")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_0afmg")]
+background_texture = ExtResource("3_b3byx")
 
 [node name="DeathZone" type="Area2D" parent="."]
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(160.5, 166)
+position = Vector2(158, 163)
 shape = SubResource("RectangleShape2D_mbj8b")
 
 [node name="MM_Player" parent="." instance=ExtResource("2_q2oxr")]

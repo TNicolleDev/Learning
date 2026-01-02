@@ -799,5 +799,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l5rwh")
-animation = &"running_back"
-frame_progress = 0.156142
+animation = &"idle_back"
+frame_progress = 0.811464

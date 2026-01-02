@@ -2,7 +2,8 @@ extends ParallaxBackground
 
 @onready var sprite_2d: Sprite2D = $ParallaxLayer/Sprite2D
 @export var background_texture: CompressedTexture2D = preload("res://martian_mike_game/assets/textures/bg/Green.png")
-@export var scroll_speed : float = 100
+@export var scroll_speed : float = 64
+
 
 
 func _ready() -> void:

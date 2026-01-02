@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwplpqtqpu24k"]
+
+[ext_resource type="Script" uid="uid://chdbondxw4t3y" path="res://dnd_mechanics/scripts/dice_roller.gd" id="1_pxbjs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tssvi"]
+font_size = 10
+
+[node name="DiceRoller" type="CanvasLayer"]
+script = ExtResource("1_pxbjs")
+
+[node name="D20" type="Button" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 72.0
+grow_vertical = 0
+text = "Roll D20
+"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 104.0
+grow_horizontal = 2
+
+[node name="D20Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "D20 Result :"
+label_settings = SubResource("LabelSettings_tssvi")
+vertical_alignment = 1
+
+[node name="D4Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "D4 Result :"
+label_settings = SubResource("LabelSettings_tssvi")
+vertical_alignment = 1
+
+[node name="D6Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "D6Result :"
+label_settings = SubResource("LabelSettings_tssvi")
+vertical_alignment = 1
+
+[node name="D8Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "D8 Result :"
+label_settings = SubResource("LabelSettings_tssvi")
+vertical_alignment = 1
+
+[node name="D10Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "D10 Result :"
+label_settings = SubResource("LabelSettings_tssvi")
+vertical_alignment = 1
+
+[node name="D12Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "D12 Result :"
+label_settings = SubResource("LabelSettings_tssvi")
+vertical_alignment = 1
+
+[connection signal="pressed" from="D20" to="." method="_on_d_20_pressed"]
